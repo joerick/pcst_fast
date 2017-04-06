@@ -1,17 +1,29 @@
-language: cpp
-compiler:
-  - gcc
-  - clang
-os:
-  - linux
-  - osx
-dist: trusty
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+    - os: osx
 
-script: "make pcst_fast_test && ./pcst_fast_test"
+script:
+  - pip install cibuildwheel==0.1.3
+  - cibuildwheel --output-dir wheelhouse
 
-notifications:
-  recipients:
-    - ludwigschmidt2@gmail.com
-  email:
-    on_success: never
-    on_failure: change
+
+# language: cpp
+# compiler:
+#   - gcc
+#   - clang
+# os:
+#   - linux
+#   - osx
+# dist: trusty
+
+# script: "make pcst_fast_test && ./pcst_fast_test"
+
+# notifications:
+#   recipients:
+#     - ludwigschmidt2@gmail.com
+#   email:
+#     on_success: never
+#     on_failure: change
