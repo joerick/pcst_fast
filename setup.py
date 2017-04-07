@@ -98,7 +98,7 @@ setup(
     author_email='alex@lenail.org',
     description='',
     ext_modules=ext_modules,
-    install_requires=['pybind11>=1.7'],
+    install_requires=['pybind11==2.1.0'],
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,
 )
