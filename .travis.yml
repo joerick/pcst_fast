@@ -6,7 +6,7 @@ matrix:
     - os: osx
 
 script:
-  - pip install git+https://github.com/joerick/cibuildwheel@2c0d6e3db1590a9f6902c6d46a8ff27aeb4f1add pybind11==2.1.0
+  - pip install git+https://github.com/joerick/cibuildwheel@2c0d6e3db1590a9f6902c6d46a8ff27aeb4f1add pybind11
   - cibuildwheel --output-dir wheelhouse
 
 env:

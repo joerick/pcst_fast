@@ -3,6 +3,8 @@ from setuptools.command.build_ext import build_ext
 import sys
 import setuptools
 
+# include external/pybind11/include/pybind11/*.h
+
 
 class get_pybind_include(object):
     """Helper class to determine the pybind11 include path
@@ -22,7 +24,7 @@ class get_pybind_include(object):
 ext_modules = [
     Extension(
         'pcst_fast',
-        ['src/pcst_fast_pybind.cc', 'src/pcst_fast.cc'],
+        sources=['src/pcst_fast_pybind.cc', 'src/pcst_fast.cc'],
         include_dirs=[
             # Path to pybind11 headers
             get_pybind_include(),
@@ -91,8 +93,8 @@ setup(
     author_email='alex@lenail.org',
     description='',
     ext_modules=ext_modules,
-    install_requires=['pybind11==2.1.0'],
-    setup_requires=['pybind11==2.1.0'],
+    install_requires=['pybind11>=2.1.0'],
+    setup_requires=['pybind11>=2.1.0'],
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,
 )
