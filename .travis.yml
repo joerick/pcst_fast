@@ -11,7 +11,7 @@ script:
 
 env:
   global:
-    - CIBW_BEFORE_BUILD=pip install pybind11
+    - CIBW_BEFORE_BUILD="pip install pybind11"
 
 # language: cpp
 # compiler:
