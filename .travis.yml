@@ -6,12 +6,13 @@ matrix:
     - os: osx
 
 script:
-  - pip install git+https://github.com/joerick/cibuildwheel@2c0d6e3db1590a9f6902c6d46a8ff27aeb4f1add pybind11
+  - pip install git+https://github.com/joerick/cibuildwheel@3f6a943b6d6a1e47a3c4f7e6930dadd171374a22
   - cibuildwheel --output-dir wheelhouse
 
 env:
   global:
     - CIBW_BEFORE_BUILD="{pip} install pybind11"
+    - CIBW_SKIP=cp26-*
 
 # language: cpp
 # compiler:
