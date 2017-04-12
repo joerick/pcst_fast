@@ -6,7 +6,7 @@ matrix:
     - os: osx
 
 script:
-  - pip install git+https://github.com/joerick/cibuildwheel@3f6a943b6d6a1e47a3c4f7e6930dadd171374a22
+  - pip install git+https://github.com/joerick/cibuildwheel@d5fa5475d4e8c58000d056f44a9968f68337cf95
   - cibuildwheel --output-dir wheelhouse
 
 env:
